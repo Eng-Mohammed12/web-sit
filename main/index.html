@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html"><h2>موقعي</h2></a>
+                    <!-- <h2>موقعي</h2> -->
+                    <div class="theme-switcher-container">
+                        <button id="theme-toggle-button" class="theme-toggle-btn">
+                            <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                            <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                
+        
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">اتصل بنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard/overview.html" class="nav-link">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>مرحباً بكم في موقعنا</h1>
+                <p>نحن نقدم أفضل الخدمات والمنتجات لعملائنا الكرام</p>
+                <button class="cta-button">اكتشف المزيد</button>
+            </div>
+        </section>
+
+        <!-- Image Slider Section -->
+        <section class="slider-section">
+            <div class="container">
+                <h2>معرض الصور</h2>
+                <div class="slider-container">
+                    <div class="slider" id="imageSlider">
+                        <div class="slide active">
+                            <img src="images/slide1.jpg" alt="صورة 1">
+                            <div class="slide-content">
+                                <h3>عنوان الصورة الأولى</h3>
+                                <p>وصف الصورة الأولى</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide2.jpg" alt="صورة 2">
+                            <div class="slide-content">
+                                <h3>عنوان الصورة الثانية</h3>
+                                <p>وصف الصورة الثانية</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide3.jpg" alt="صورة 3">
+                            <div class="slide-content">
+                                <h3>عنوان الصورة الثالثة</h3>
+                                <p>وصف الصورة الثالثة</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" id="prevBtn">❮</button>
+                    <button class="slider-btn next-btn" id="nextBtn">❯</button>
+                    <div class="slider-dots" id="sliderDots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="cards-section">
+            <div class="container">
+                <h2>خدماتنا</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <img src="images/service1.jpg" alt="service 1">
+                        <div class="card-content">
+                            <h3>تطوير المواقع</h3>
+                            <p>نقدم خدمات تطوير المواقع الإلكترونية بأحدث التقنيات</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/service2.jpg" alt="service 2">
+                        <div class="card-content">
+                            <h3>التصميم الجرافيكي</h3>
+                            <p>تصميمات إبداعية ومميزة لجميع احتياجاتك</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/service3.jpg" alt="service 3">
+                        <div class="card-content">
+                            <h3>التسويق الرقمي</h3>
+                            <p>استراتيجيات تسويقية فعالة لنمو أعمالك</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 موقعي. جميع الحقوق محفوظة.</p>
+             <div class="social-icons">
+        <a href="https://wa.me/967739219037" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1Gso8CgwxX/" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/o00.mm?igsh=MXF5OXNkZ3hnMmdrOQ==" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

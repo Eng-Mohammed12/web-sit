@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الدخول - لوحة التحكم</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: var(--bg-color);
+        overflow: hidden;
+      }
+      .login-wrapper {
+        display: flex;
+        width: 90%;
+        max-width: 900px;
+        min-height: 500px;
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      [data-theme="dark"] .login-wrapper {
+        background-color: var(--light-color);
+      }
+      .login-form-container {
+        flex: 1;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .login-branding {
+        flex: 1;
+        background: linear-gradient(135deg, var(--primary-color), #0056b3);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+      }
+      .login-branding h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--light-color);
+      }
+      .login-branding a {
+        text-decoration: none;
+      }
+      .login-branding p {
+        font-size: 1.1rem;
+      }
+      .form-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .form-title h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+      }
+      .form-title p {
+        color: var(--secondary-color);
+      }
+      .dashboard-form .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .dashboard-form label {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      .dashboard-form input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+      }
+      @media (max-width: 768px) {
+        .login-branding {
+          display: none;
+        }
+        .login-form-container {
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-branding">
+        <a href="index.html"><h1 id="siteTitle">موقعي</h1></a>
+        <!-- <h1 id="siteTitle">موقعي</h1> -->
+        <p>منصة الإدارة والتحكم</p>
+      </div>
+      <div class="login-form-container">
+        <div class="form-title">
+          <h2>تسجيل الدخول</h2>
+          <p>مرحباً بعودتك! الرجاء إدخال بياناتك.</p>
+        </div>
+        <form id="loginForm" class="dashboard-form">
+          <div class="form-group">
+            <label for="username">اسم المستخدم</label>
+            <input type="text" id="username" required />
+            <span class="error-message" id="usernameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input type="password" id="password" required />
+            <span class="error-message" id="passwordError"></span>
+          </div>
+          <button type="submit" class="submit-btn">دخول</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"><span id="toastMessage"></span></div>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
