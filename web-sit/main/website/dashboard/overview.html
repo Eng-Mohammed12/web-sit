@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم - نظرة عامة</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body class="protected-page">
+    <header>
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo"><h2>موقعي</h2></div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="../index.html" class="nav-link">عرض الموقع</a>
+            </li>
+          </ul>
+          <div class="notification-bell" id="notificationBell">
+            <a href="#messages" title="الرسائل الجديدة">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                />
+              </svg>
+              <span class="notification-count" id="notificationCount">0</span>
+            </a>
+          </div>
+          <div class="nav-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span
+            ><span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="dashboard-main">
+      <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+          <h3>لوحة التحكم</h3>
+          <ul class="sidebar-menu">
+            <li><a href="overview.html" class="active">نظرة عامة</a></li>
+            <li><a href="add.html">إضافة بيانات</a></li>
+            <li><a href="settings.html">الإعدادات</a></li>
+            <li>
+              <a href="#" id="logoutButton" class="logout-btn">تسجيل الخروج</a>
+            </li>
+          </ul>
+        </aside>
+
+        <div class="dashboard-content">
+          <div class="page-header">
+            <h1>نظرة عامة</h1>
+            <p>إدارة البيانات المحفوظة</p>
+          </div>
+
+          <div class="stats-cards">
+            <div class="stat-card">
+              <h3>إجمالي العناصر</h3>
+              <span class="stat-number" id="totalItems">0</span>
+            </div>
+            <div class="stat-card">
+              <h3>آخر تحديث</h3>
+              <span class="stat-text" id="lastUpdate">لا يوجد</span>
+            </div>
+          </div>
+
+          <div class="data-table-container">
+            <div class="table-header">
+              <h2>البيانات المحفوظة</h2>
+              <a href="add.html" class="add-btn">إضافة عنصر جديد</a>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table" id="dataTable">
+                <thead>
+                  <tr>
+                    <th>الرقم</th>
+                    <th>الصورة</th>
+                    <th>الاسم</th>
+                    <th>الوصف</th>
+                    <th>القيمة</th>
+                    <th>تاريخ الإضافة</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="dataTableBody"></tbody>
+              </table>
+              <div id="noDataMessage" class="no-data" style="display: none">
+                <p>لا توجد بيانات محفوظة</p>
+                <a href="add.html" class="add-btn">إضافة أول عنصر</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="messages"
+            class="data-table-container"
+            style="margin-top: 3rem"
+          >
+            <div class="table-header"><h2>الرسائل الواردة</h2></div>
+            <div class="table-wrapper">
+              <table class="data-table" id="messagesTable">
+                <thead>
+                  <tr>
+                    <th>الاسم</th>
+                    <th>البريد الإلكتروني</th>
+                    <th>الرسالة</th>
+                    <th>التاريخ</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="messagesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="viewModal" class="modal">
+      <div class="modal-content" style="max-width: 400px; padding: 2rem">
+        <span class="close">&times;</span>
+        <h3 id="viewModalTitle"></h3>
+        <img
+          id="viewModalImage"
+          src=""
+          style="
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+          "
+        />
+        <p id="viewModalDescription"></p>
+        <strong
+          id="viewModalPrice"
+          style="
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+          "
+        ></strong>
+      </div>
+    </div>
+    <div id="deleteModal" class="modal">
+      <div class="modal-content" style="padding: 2rem">
+        <h3>تأكيد الحذف</h3>
+        <p>هل أنت متأكد من حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.</p>
+        <div class="modal-actions">
+          <button id="confirmDelete" class="delete-btn">نعم، حذف</button
+          ><button class="cancel-btn">إلغاء</button>
+        </div>
+      </div>
+    </div>
+    <div id="toast" class="toast"><span id="toastMessage"></span></div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 موقعي. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم - الإعدادات</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body class="protected-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo"><h2>موقعي</h2></div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">عرض الموقع</a></li>
+                </ul>
+                <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <aside class="dashboard-sidebar">
+                <h3>لوحة التحكم</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="overview.html">نظرة عامة</a></li>
+                    <li><a href="add.html">إضافة بيانات</a></li>
+                    <li><a href="settings.html" class="active">الإعدادات</a></li>
+                    <li><a href="#" id="logoutButton" class="logout-btn">تسجيل الخروج</a></li>
+                </ul>
+            </aside>
+
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>الإعدادات</h1>
+                    <p>تخصيص إعدادات الموقع والمظهر</p>
+                </div>
+
+                <div class="settings-container">
+                    <!-- إعدادات المظهر -->
+                    <div class="settings-section">
+                        <h2>إعدادات المظهر</h2>
+                        <div class="setting-item">
+                            <div class="setting-info"><h3>وضع المظهر</h3><p>اختر بين الوضع الفاتح والداكن</p></div>
+                            <div class="setting-control">
+                                <label class="toggle-switch"><input type="checkbox" id="themeToggle" /><span class="slider"></span></label>
+                                <span id="themeLabel">فاتح</span>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info"><h3>اللون الأساسي</h3><p>اختر اللون الأساسي للموقع</p></div>
+                            <div class="setting-control">
+                                <div class="color-picker-container"><input type="color" id="primaryColor" value="#007bff" /></div>
+                                <div class="preset-colors">
+                                    <button class="preset-color" data-color="#007bff" style="background-color: #007bff"></button>
+                                    <button class="preset-color" data-color="#28a745" style="background-color: #28a745"></button>
+                                    <button class="preset-color" data-color="#dc3545" style="background-color: #dc3545"></button>
+                                    <button class="preset-color" data-color="#ffc107" style="background-color: #ffc107"></button>
+                                    <button class="preset-color" data-color="#6f42c1" style="background-color: #6f42c1"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- إعدادات عامة -->
+                    <div class="settings-section">
+                        <h2>إعدادات عامة</h2>
+                        <div class="setting-item">
+                            <div class="setting-info"><h3>اسم الموقع</h3><p>تغيير اسم الموقع الظاهر في الرأس</p></div>
+                            <div class="setting-control"><input type="text" id="siteName" placeholder="اسم الموقع" /></div>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info"><h3>التشغيل التلقائي للشرائح</h3><p>تفعيل أو إلغاء التشغيل التلقائي</p></div>
+                            <div class="setting-control">
+                                <label class="toggle-switch"><input type="checkbox" id="autoSlide" /><span class="slider"></span></label>
+                                <span id="autoSlideLabel">مفعل</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- إدارة المستخدمين (القسم الجديد) -->
+                    <div class="settings-section">
+                        <h2>إدارة المستخدمين</h2>
+                        <p>إنشاء حسابات جديدة للوصول إلى لوحة التحكم.</p>
+                        <form id="newUserForm" class="dashboard-form" style="margin-top: 1.5rem;">
+                            <div class="form-group">
+                                <label for="newUsername">اسم المستخدم الجديد</label>
+                                <input type="text" id="newUsername" required>
+                                <span class="error-message" id="newUsernameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">كلمة المرور الجديدة</label>
+                                <input type="password" id="newPassword" required>
+                                <span class="error-message" id="newPasswordError"></span>
+                            </div>
+                            <button type="submit" class="submit-btn">إنشاء مستخدم</button>
+                        </form>
+                    </div>
+
+                    <!-- أزرار الحفظ والإعادة -->
+                    <div class="settings-actions">
+                        <button id="saveSettings" class="save-btn">حفظ الإعدادات</button>
+                        <button id="resetSettings" class="reset-btn">إعادة تعيين الكل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast"><span id="toastMessage"></span></div>
+    <footer><div class="container"><p>&copy; 2025 موقعي. جميع الحقوق محفوظة.</p></div></footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html"><h2>موقعي</h2></a>
+                    <!-- <h2>موقعي</h2> -->
+                    <div class="theme-switcher-container">
+                        <button id="theme-toggle-button" class="theme-toggle-btn">
+                            <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                            <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">المنتجات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">اتصل بنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard/overview.html" class="nav-link">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header hero hero-content">
+            <div class="container">
+                <h1>اتصل بنا</h1>
+                <p>نحن هنا للإجابة على جميع استفساراتك</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>معلومات الاتصال</h2>
+                        <div class="contact-item">
+                            <h3>العنوان</h3>
+                            <p>اليمن صنعاء شارع الستين</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>الهاتف</h3>
+                            <p>+967 779708668</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>info@mywebsite.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>ساعات العمل</h3>
+                            <p>الأحد - الخميس: 9:00 ص - 6:00 م</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>أرسل لنا رسالة</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">الاسم *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">الرسالة *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+
+                            <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 موقعي. جميع الحقوق محفوظة.</p>
+             <div class="social-icons">
+        <a href="https://wa.me/967779708668" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/19f9BU2FvX/" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/abdalrhmanalshmere?igsh=MWZ0aHlueDA1ajZqMg==" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
+

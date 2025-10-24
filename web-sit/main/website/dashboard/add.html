@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - إضافة بيانات</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body class="protected-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo"><h2>موقعي</h2></div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">عرض الموقع</a></li>
+                </ul>
+                <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <aside class="dashboard-sidebar">
+                <h3>لوحة التحكم</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="overview.html">نظرة عامة</a></li>
+                    <li><a href="add.html" class="active">إضافة بيانات</a></li>
+                    <li><a href="settings.html">الإعدادات</a></li>
+                    <li><a href="#" id="logoutButton" class="logout-btn">تسجيل الخروج</a></li>
+                </ul>
+            </aside>
+
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>إضافة بيانات جديدة</h1>
+                    <p>أضف عنصراً جديداً أو قم بتعديل عنصر حالي</p>
+                </div>
+
+               <form id="addDataForm" class="dashboard-form">
+
+    
+    <div class="form-group">
+        <label for="itemName">اسم العنصر *</label>
+        <input type="text" id="itemName" name="itemName" required>
+    </div>
+
+    <!-- حقل الوصف -->
+    <div class="form-group">
+        <label for="itemDescription">الوصف *</label>
+        <textarea id="itemDescription" name="itemDescription" rows="4" required></textarea>
+    </div>
+
+    <!-- حقل القيمة/السعر -->
+    <div class="form-group">
+        <label for="itemValue">القيمة الرقمية (السعر) *</label>
+        <input type="number" id="itemValue" name="itemValue" step="0.01" required>
+    </div>
+
+    <!-- حقل اختيار الصورة -->
+    <div class="form-group">
+        <label for="itemImageFile">اختر صورة للمنتج *</label>
+        <input type="file" id="itemImageFile" name="itemImageFile" accept="image/*">
+        <img id="imagePreview" src="" alt="معاينة الصورة" style="max-width: 100px; margin-top: 10px; display: none;">
+    </div>
+
+    
+    <div class="form-group setting-item-horizontal">
+        <div class="setting-info">
+            <h3>عرض في السلايدر</h3>
+            <p>هل تريد عرض هذا المنتج في شريط الصور بالصفحة الرئيسية؟</p>
+        </div>
+        <div class="setting-control">
+            <label class="toggle-switch">
+                <input type="checkbox" id="showInSlider">
+                <span class="slider">
+                    
+                </span>
+            </label>
+        </div>
+    </div>
+    <!-- === نهاية الجزء الجديد === -->
+
+    <!-- أزرار الحفظ والإلغاء -->
+    <div class="form-actions">
+        <button type="submit" class="submit-btn">حفظ البيانات</button>
+        <a href="overview.html" class="cancel-btn">إلغاء</a>
+    </div>
+
+</form>
+
+               
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast"><span id="toastMessage"></span></div>
+    <footer><div class="container"><p>&copy; 2025 موقعي. جميع الحقوق محفوظة.</p></div></footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/add-data.js"></script>
+</body>
+</html>
